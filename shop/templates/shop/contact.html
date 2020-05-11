@@ -1,0 +1,56 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%} Contact Us - Badsaha Hotel {% endblock %}
+{% block body %}
+<form action="/shop/contact/" method="post">{% csrf_token %}
+<div class="container">
+  <div class="row">
+   <div class="col-xl-8 offset-xl-2">
+    <h1>Contact Us</h1><hr>
+    <p class="lead"><b>By filling out the contact form. We will contact you as soon as possible.</b></p>
+    <form id="contact-form" method="post" action="contact.php" role="form" novalidate="true">
+    <div class="messages"></div>
+    <div class="controls">
+     <div class="row">
+      <div class="col-lg-6">
+       <div class="form-group">
+         <label for="form_name">Full Name *</label>
+         <input id="form_name" type="text" name="name" class="form-control" placeholder="Please fill the name field *" required="required" data-error="You must fill the name field">
+         <div class="help-block with-errors alert-danger"></div>
+        </div>
+       </div>
+       <div class="col-lg-6"></div>
+     </div>
+     <div class="row">
+      <div class="col-lg-6">
+       <div class="form-group">
+        <label for="form_email">E-mail *</label>
+        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please fill the email field *" required="required" data-error="You must fill the email field">
+         <div class="help-block with-errors alert-danger"></div>
+        </div>
+       </div>
+       <div class="col-lg-6"></div>
+     </div>
+     <div class="row">
+      <div class="col-lg-6">
+       <div class="form-group">
+        <label for="name">Phone</label>
+        <input type="tel" class="form-control" id="phone" name='phone' required="phone" placeholder="Enter Your Phone Number">
+         <div class="help-block with-errors alert-danger"></div>
+        </div>
+       </div>
+       <div class="col-lg-6"></div>
+      </div>
+      <div class="form-group">
+       <label for="desc">Message *</label>
+       <textarea class="form-control" id="desc" name='desc' rows="3"></textarea>
+        <div class="help-block with-errors alert-danger"></div>
+       </div>
+       <input type="submit" class="btn btn-success btn-send" value="Submit">
+       <p class="text-muted" style="padding-top: 5px;"><strong>*</strong>This field must be fill.</p>
+       </div><!-- controls all end -->
+      </form><!-- form all end -->
+     </div><!-- col-xl-8 offset-xl-2 end -->
+    </div><!-- row all end -->
+  </div><!-- container all end -->
+{% endblock %}
